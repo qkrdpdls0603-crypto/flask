@@ -1,23 +1,13 @@
-from flask import Blueprint
+from flask import Blueprint, redirect, url_for
+
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
-@bp.route('/')
-def index():
-    return 'Hello pybo!'
-
 @bp.route('/hello')
 def hello_world():
-    return 'Hello pybo!'
+    return 'Hello Pybo!'
 
-@bp.route('/about')
-def about():
-    return 'About pybo!'
+@bp.route('/')
+def index():
+    return redirect(url_for('question._list'))
 
-@bp.route('/contact')
-def contact():
-    return 'Contact pybo!'
-
-@bp.route('/bye')
-def bye_world():
-    return 'Bye pybo!'
