@@ -7,24 +7,24 @@
             {{ form.csrf_token }}
             <!--오류표시 Start-->
             {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-            {% for field, errors in form.errors.items() %}
-            <strong>{{ form[field].label }}</strong>
-            <ul>
-                {% for error in errors %}
-                <li>{{ error }}</li>
+            <div class="alert alert-danger" role="alert">
+                {% for field, errors in form.errors.items() %}
+                <strong>{{ form[field].label }}</strong>
+                <ul>
+                    {% for error in errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
                 {% endfor %}
-            </ul>
-            {% endfor %}
-        </div>
-        {% endif %}
+            </div>
+            {% endif %}
             <!--오류표시 End-->
             {{ form.subject.label }}  <!--<label for="">제목</label>-->
-            {{ form.subject(class='form-control') }}      <!--<input type="text" name="" id="">-->
+            {{ form.subject(class="form-control") }}      <!--<input type="text" name="" id="">-->
 
             {{ form.content.label }}  <!--<label for="">내용</label>-->
-            {{ form.content(class='form-control') }}      <!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
-            <button type="submit" class="btn btn-primary">등록하기</button>
+            {{ form.content(class="form-control") }}      <!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
+            <button type="submit" class="btn btn-primary mt-3">등록하기</button>
         </form>
     </div>
 {% endblock %}
